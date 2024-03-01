@@ -1,0 +1,10 @@
+version: '3'
+services:
+  base-project-pg:
+    image: postgres:latest
+    environment:
+      - POSTGRES_USER=faker
+      - POSTGRES_PASSWORD=123
+      - POSTGRES_DB=classes
+    ports:
+      - '5431:5432'

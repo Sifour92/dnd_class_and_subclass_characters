@@ -1,0 +1,10 @@
+TRUNCATE TABLE subclasses CASCADE;
+INSERT INTO subclasses(name) VALUES ('Архифея');
+INSERT INTO subclasses(name) VALUES ('Исчадие');
+INSERT INTO subclasses(name) VALUES ('Великий древний');
+INSERT INTO subclasses(name) VALUES ('Бессмертный');
+INSERT INTO subclasses(name) VALUES ('Ведьмовской клинок');
+INSERT INTO subclasses(name) VALUES ('Небожитель');
+INSERT INTO subclasses(name) VALUES ('Бездонный');
+INSERT INTO subclasses(name) VALUES ('Гений');
+INSERT INTO subclasses(name) VALUES ('Нежить');

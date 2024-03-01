@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Upload Image</title>
+</head>
+<body>
+<h2>Upload Image</h2>
+
+<form action="#" th:action="@{/api/v1/mvc/class/upload-class-image}" method="post" enctype="multipart/form-data">
+  <input type="file" name="file" accept="image/*"/>
+  <button type="submit">Upload</button>
+</form>
+
+<!-- Display message -->
+<!--<div th:if="${message}" th:text="${message}"></div>-->
+
+<!-- Display uploaded images -->
+<div th:if="${images}">
+  <h2>Uploaded Images</h2>
+  <div th:each="image : ${images}">
+    <img th:src="'data:image/jpeg;base64,' + ${image.imageBase64}" width="200"/>
+  </div>
+</div>
+
+</body>
+</html>

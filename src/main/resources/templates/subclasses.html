@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Subclasses</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>Subclass Name</th>
+        <th>About Subclass</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="subclass : ${subclasses}">
+        <td th:text="${subclass.name}"></td>
+        <td>
+            <table>
+
+                <thead>
+                <tr>
+                    <th>name</th>
+                    <th>level</th>
+                    <th>description</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr th:each="feature : ${subclass.features}">
+                    <td th:text="${feature.featureName}"></td>
+                    <td th:text="${feature.featureLevel} + ' level'"></td>
+                    <td th:text="${feature.description}"></td>
+                </tr>
+                </tbody>
+
+            </table>
+        </td>
+    </tr>
+    </tbody>
+
+</table>
+</body>
+</html>

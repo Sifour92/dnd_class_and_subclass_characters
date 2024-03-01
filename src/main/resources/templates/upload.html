@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Upload File</title>
+</head>
+<body>
+
+<h2>Upload File</h2>
+<form action="#" th:action="@{/upload}" method="post" enctype="multipart/form-data">
+  <input type="file" name="file" id="file">
+  <button type="submit">Upload</button>
+</form>
+
+
+<h2>Uploaded Files</h2>
+<ul>
+  <li th:each="file : ${files}">
+    <div th:if="${file != null}">
+      <a th:href="@{'/file/' + ${file.id}}" th:text="${file.name}">Посмотреть изображение</a>
+    </div>
+  </li>
+</ul>
+
+</body>
+</html>

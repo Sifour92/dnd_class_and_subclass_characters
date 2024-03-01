@@ -1,0 +1,6 @@
+DROP TABLE IF EXISTS subclasses;
+
+CREATE TABLE subclasses(
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) UNIQUE NOT NULL
+);

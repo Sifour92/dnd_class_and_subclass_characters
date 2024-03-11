@@ -1,0 +1,82 @@
+  server:
+    #сам смапит
+    port: 0
+
+  spring:
+    application:
+      name: heroes-of-players
+
+    eureka:
+      client:
+#        register-with-eureka: false
+#        fetch-registry: false
+        server-url:
+          defaultZone : http://localhost:8081/eureka
+
+    logging:
+      level:
+        com:
+          netflix:
+            eureka: OFF
+            discovery: OFF
+      pattern:
+        console: %C{1.} [%-5level] $d{HH:mm:ss} - %msg%n
+
+  datasource:
+    url: jdbc:postgresql://localhost:5431/classes
+    username: faker
+    password: 123
+    driverClassName: org.postgresql.Driver
+
+#
+#server:
+#  use-forward-headers: true
+#  forward-headers-strategy: framework
+#  port: 8080
+#springdoc:
+#  swagger-ui:
+#    path: /swagger
+#
+#spring:
+#  application:
+#    name: person-and-class-service
+#    version: "@version@"
+#
+#
+#  servlet:
+#    multipart:
+#      max-file-size: 10MB
+#      max-request-size: 10MB
+#  datasource:
+#    hikari:
+#      maximumPoolSize: 30
+#      maxLifeTime: 60001
+#      idleTimeout: 60000
+#      keepaliveTime: 60000
+#      minimum-idle: 20
+#      connection-test-query: SELECT 1
+#
+#  jpa:
+#    database-platform: org.hibernate.dialect.PostgreSQLDialect
+#    open-in-view: false
+#    properties:
+#      hibernate:
+#        jdbc:
+#          batch_size: 10000
+#          order_inserts: true
+#          order_updates: true
+#        temp:
+#          use_jdbc_metadata_defaults: false
+#        default_schema: public
+#  liquibase:
+#    change-log: classpath:/db/changelog/db.changelog-master.yaml
+#    liquibaseSchema: public
+
+#feign:
+#  file-service:
+#    url: ${FILE_SERVICE_URL}
+#    @FeignClient(name = "file-service", url = "${feign.FILE_SERVICE_URL}")
+
+
+#  contract-service:
+#    url: ${CONTRACT_SERVICE_URL}
